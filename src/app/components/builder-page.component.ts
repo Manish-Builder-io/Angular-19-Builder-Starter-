@@ -19,6 +19,7 @@ import { CUSTOM_COMPONENTS } from "../builder-registry";
         [model]="model"
         [content]="content"
         [apiKey]="apiKey"
+        [locale]="locale"
         [customComponents]="customComponents"
       ></builder-content>
     </ng-container>
@@ -39,6 +40,8 @@ export class BuilderPage {
 
   customComponents = CUSTOM_COMPONENTS;
 
+  locale = "en-US"
+
   async ngOnInit() {
     const urlPath = window.location.pathname || "/";
 
@@ -48,6 +51,8 @@ export class BuilderPage {
       userAttributes: {
         urlPath,
       },
+      locale: this.locale,
+      options: {locale: this.locale}
     });
 
     if (!builderContent) {
