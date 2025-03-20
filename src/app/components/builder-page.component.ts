@@ -40,7 +40,7 @@ export class BuilderPage {
 
   customComponents = CUSTOM_COMPONENTS;
 
-  locale = "en-US"
+  locale = "ca-ES"
 
   async ngOnInit() {
     const urlPath = window.location.pathname || "/";
